@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Thiệp Chúc Tết 2026</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    text-align:center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ff0000, #ffcc00);
+    overflow:hidden;
+}
+
+h1{
+    color: yellow;
+    font-size: 60px;
+    margin-top: 150px;
+    text-shadow: 3px 3px 5px black;
+}
+
+p{
+    font-size: 28px;
+    color: white;
+}
+
+button{
+    padding:15px 30px;
+    font-size:20px;
+    background:gold;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* Hoa rơi */
+.flower{
+    position:absolute;
+    top:-50px;
+    color:yellow;
+    font-size:30px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall{
+    to{
+        transform: translateY(100vh);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎊 Chúc Mừng Năm Mới 2026 🎊</h1>
+<p>Chúc bạn và gia đình An Khang - Thịnh Vượng - Vạn Sự Như Ý</p>
+
+<button onclick="playMusic()">Bật Nhạc 🎵</button>
+
+<audio id="music" src="nhactet.mp3"></audio>
+
+<script>
+function playMusic(){
+    document.getElementById("music").play();
+}
+
+// Tạo hoa rơi
+setInterval(()=>{
+    const flower = document.createElement("div");
+    flower.classList.add("flower");
+    flower.innerHTML="🌼";
+    flower.style.left = Math.random()*window.innerWidth+"px";
+    flower.style.animationDuration = (Math.random()*3+2)+"s";
+    document.body.appendChild(flower);
+
+    setTimeout(()=>{
+        flower.remove();
+    },5000);
+},300);
+</script>
+
+</body>
+</html>
